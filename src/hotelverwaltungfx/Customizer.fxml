@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" cache="true" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-radius: 0 10 10 0; -fx-background-color: #fff;" styleClass="panel-right" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelverwaltungfx.CustomizerController">
+  <children>
+    <TabPane cache="true" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab fx:id="roomTab" content="$null" onClosed="#roomTabClosing" onSelectionChanged="#roomTabShowing" style="-fx-focus-color: transparent;" text="Room" />
+        <Tab fx:id="serviceTab" content="$null" onClosed="#serviceTabClosing" onSelectionChanged="#serviceTabShowing" style="-fx-focus-color: transparent;" text="Service" />
+        <Tab fx:id="addressTab" content="$null" onClosed="#addressTabClosing" onSelectionChanged="#addressTabShowing" style="-fx-focus-color: transparent;" text="Address" />
+        <Tab fx:id="personTab" content="$null" onClosed="#personTabClosing" onSelectionChanged="#personTabShowing" style="-fx-focus-color: transparent;" text="Person" />
+        <Tab fx:id="guestTab" content="$null" onClosed="#guestTabClosing" onSelectionChanged="#guestTabShowing" style="-fx-focus-color: transparent;" text="Guest" />
+        <Tab fx:id="orderTab" content="$null" onClosed="#orderTabClosing" onSelectionChanged="#orderTabShowing" style="-fx-focus-color: transparent;" text="Order" />
+      </tabs>
+    </TabPane>
+  </children>
+  <stylesheets>
+    <URL value="@main.css" />
+  </stylesheets>
+</AnchorPane>
