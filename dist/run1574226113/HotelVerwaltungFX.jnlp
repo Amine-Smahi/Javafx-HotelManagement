@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="HotelVerwaltungFX.jnlp">
+  <information>
+    <title>HotelVerwaltungFX</title>
+    <vendor>Nosenko</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="HotelVerwaltungFX.jar" size="296328" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.26-bin.jar" size="887248" download="eager" />
+    <jar href="lib\schudt-javafx-datepicker-0.0.2.jar" size="72588" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="HotelVerwaltungFX" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="hotelverwaltungfx.HotelVerwaltungFX"  name="HotelVerwaltungFX" />
+  <update check="always"/>
+</jnlp>
