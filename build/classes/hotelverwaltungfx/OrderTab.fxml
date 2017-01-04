@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" cache="false" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" styleClass="panel-custom" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelverwaltungfx.OrderTabController">
+  <children>
+    <GridPane id="GridPane" fx:id="gridpane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="Order" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+          <effect>
+            <Bloom />
+          </effect>
+          <GridPane.margin>
+            <Insets right="15.0" fx:id="x1" />
+          </GridPane.margin>
+        </Label>
+        <ComboBox fx:id="orderCBox" onAction="#handleOrderCBoxChangeAction" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label text="Guest" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="1">
+          <effect>
+            <Bloom fx:id="x2" />
+          </effect>
+        </Label>
+        <ComboBox fx:id="guestCBox" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label effect="$x2" text="Room" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="2" />
+        <Label effect="$x2" text="From" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="3" />
+        <ComboBox fx:id="roomCBox" onAction="#handleChangeRoomSelection" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label effect="$x2" text="To" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="4" />
+        <Label effect="$x2" text="Service" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="5" />
+        <ComboBox fx:id="serviceCBox" onAction="#handleServiceCBoxChangeAction" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <ScrollPane prefHeight="168.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" GridPane.rowSpan="2">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <ListView id="personList" fx:id="serviceList" onMouseClicked="#handleMouseClickOnServiceList" prefHeight="374.0" prefWidth="208.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+              </children>
+            </AnchorPane>
+          </content>
+          <GridPane.margin>
+            <Insets left="15.0" right="15.0" />
+          </GridPane.margin>
+        </ScrollPane>
+        <Button fx:id="addButt" mnemonicParsing="false" onAction="#handleAddApplyOrderAction" prefWidth="90.0" style="-fx-background-color: #2196F3;" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+        <ImageView id="rubbishOrange" fx:id="removeServiceButt" onMouseClicked="#removePerson" pickOnBounds="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="3" GridPane.rowIndex="7" GridPane.valignment="TOP">
+          <image>
+            <Image preserveRatio="true" smooth="true" url="@../images/rubbishOrange.png" />
+          </image>
+          <GridPane.margin>
+            <Insets left="4.0" top="10.0" />
+          </GridPane.margin>
+        </ImageView>
+        <ImageView id="addOrange" fx:id="addServiceButt" onMouseClicked="#addPerson" pickOnBounds="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="3" GridPane.rowIndex="6">
+          <image>
+            <Image preserveRatio="true" smooth="true" url="@../images/addOrange.png" />
+          </image>
+          <GridPane.margin>
+            <Insets left="4.0" />
+          </GridPane.margin>
+        </ImageView>
+        <Button fx:id="removeButt" mnemonicParsing="false" onAction="#handleRemoveOrderAction" prefWidth="90.0" style="-fx-background-color: #2196F3;" text="Remove" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+        <TextField fx:id="countField" maxWidth="40.0" prefWidth="25.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+        <ImageView id="addOrange" fx:id="billCreate" onMouseClicked="#createBill" pickOnBounds="true" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="3" GridPane.rowIndex="0">
+          <image>
+            <Image preserveRatio="true" smooth="true" url="@../images/billCreate.png" />
+          </image>
+          <GridPane.margin>
+            <Insets left="4.0" top="5.0" />
+          </GridPane.margin>
+        </ImageView>
+        <Text fx:id="dateError" fill="#ff3333" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="3" GridPane.rowIndex="3">
+          <effect>
+            <Bloom>
+              <input>
+                <Reflection fraction="0.7261904761904762" topOpacity="0.6111111111111112" />
+              </input>
+            </Bloom>
+          </effect>
+          <font>
+            <Font size="16.0" />
+          </font>
+          <GridPane.margin>
+            <Insets left="5.0" />
+          </GridPane.margin>
+        </Text>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <stylesheets>
+    <URL value="@main.css" />
+  </stylesheets>
+</AnchorPane>

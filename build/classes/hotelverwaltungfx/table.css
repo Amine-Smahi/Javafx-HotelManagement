@@ -1,0 +1,32 @@
+/* 
+    Document   : table
+    Created on : 27.11.2013, 16:32:12
+    Author     : Nosenko
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.column-header, .table-view .filler {
+    -fx-text-fill: #2196F3;
+    -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%));
+    -fx-font-size: 12px;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #999999;
+}
+
+.table-row-cell{
+    -fx-background-color: #666666;
+}

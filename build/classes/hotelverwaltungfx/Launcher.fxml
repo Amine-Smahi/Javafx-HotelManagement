@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?scenebuilder-background-color 0x000000ff?>
+
+<AnchorPane id="AnchorPane" fx:id="launcher_mainPanel" minWidth="268.0" prefHeight="516.0" prefWidth="279.0" style="-fx-background-radius: 10 10 10 10; -fx-focus-color: transparent;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelverwaltungfx.LauncherController">
+  <children>
+    <SplitPane dividerPositions="0.6704119850187266" focusTraversable="true" orientation="VERTICAL" prefHeight="536.0" prefWidth="268.0" style="-fx-background-radius: 10 10 10 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane fx:id="launcher_imagePanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="268.0" snapToPixel="false" style="-fx-background-radius: 10 10 0 0; -fx-background-color: #fff;" styleClass="panel-top">
+          <children>
+            <ImageView id="launcherWall" fitHeight="608.0" fitWidth="541.0" layoutX="-136.0" layoutY="-152.0" pickOnBounds="true" scaleX="0.5" scaleY="0.5">
+              <effect>
+                <InnerShadow height="178.31746031746033" radius="88.65873015873017" width="178.31746031746033" />
+              </effect>
+              <image>
+                <Image url="@images/logo.png" />
+              </image>
+            </ImageView>
+          </children>
+        </AnchorPane>
+        <AnchorPane fx:id="launcher_buttonsPanel" minHeight="0.0" minWidth="0.0" prefHeight="226.0" prefWidth="232.0" styleClass="panel-bottom">
+          <children>
+            <VBox id="VBox" alignment="CENTER" prefHeight="203.0" prefWidth="266.0" spacing="15.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Button fx:id="launcher_startButton" mnemonicParsing="false" onAction="#handleStartProgram" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #2196F3;" text="Start" />
+                <ToggleButton fx:id="launcher_dbsettingsButton" mnemonicParsing="false" onAction="#handleDBSettingsButtonAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #2196F3;" styleClass="button" text="DB-Settings" textFill="BLACK">
+                  <font>
+                    <Font size="12.0" fx:id="x1" />
+                  </font>
+                </ToggleButton>
+                <Button fx:id="launcher_exitButton" font="$x1" mnemonicParsing="false" onAction="#handleExitButtonAction" prefHeight="28.0" prefWidth="126.0" style="-fx-background-color: #2196F3;" text="Exit" textFill="BLACK" />
+              </children>
+            </VBox>
+          </children>
+          <stylesheets>
+            <URL value="@main.css" />
+          </stylesheets>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+  <stylesheets>
+    <URL value="@main.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,147 @@
+/* 
+    Document   : main
+    Created on : 14.10.2013, 01:09:40
+    Author     : Nosenko
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;   
+}
+
+.label{
+    -fx-font-size: 16;
+    -fx-text-fill: #2196F3;
+}
+
+.tab-pane .tab-header-area .tab-header-background{
+    -fx-background-radius: 0 10 0 0; 
+    -fx-background-color: #2196F3;
+}
+
+.tab{
+    -fx-background-radius: 10 10 0 0;      
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+}
+
+.tab-label{
+    -fx-text-fill: #2196F3;
+}
+
+.background-gradient{
+    -fx-background-color: linear-gradient(from 0% 100% to 100% 100%,
+    black,
+    #ff0000);
+}
+
+.background{
+    -fx-background-color: black;
+}
+
+.check-box, .check-box:focused{
+    -fx-focus-color: transparent;
+}
+
+.button, .button:focused{
+     -fx-focus-color: #2196F3;
+     -fx-background-radius: 10; 
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+     -fx-font-size: 15;
+     -fx-text-fill: #fff;
+}
+ 
+.panel-top{
+    -fx-background-radius: 10 10 0 0; 
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+}
+
+.panel-bottom-left{
+    -fx-background-radius: 0 0 0 10; 
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+}
+
+.panel-custom{
+    -fx-background-radius: 0 0 10 0; 
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+}
+
+.panel-bottom{
+    -fx-background-radius: 0 0 10 10; 
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+}
+
+.panel-left{
+    -fx-background-radius: 10 0 0 10; 
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+}
+
+.panel-right{
+    -fx-background-radius: 0 10 10 0; 
+     -fx-background-color: 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)), 
+            derive(-fx-base,-40%), 
+            radial-gradient(radius 100%, 
+                             derive(-fx-base,-60%), 
+                             derive(-fx-base,-80%)); 
+     -fx-background-insets: 0,1,2;
+}
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" styleClass="panel-custom" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelverwaltungfx.AddressTabController">
+  <children>
+    <GridPane id="GridPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="State" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+          <effect>
+            <Bloom fx:id="x5" />
+          </effect>
+          <GridPane.margin>
+            <Insets right="15.0" fx:id="x1" />
+          </GridPane.margin>
+        </Label>
+        <Label effect="$x5" text="City" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="2" />
+        <Label effect="$x5" text="Street" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="3" />
+        <Label effect="$x5" text="ZIP" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="4" />
+        <Label effect="$x5" text="Address" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.margin="$x1" GridPane.rowIndex="0" />
+        <ComboBox id="addressField" fx:id="addressCBox" onAction="#handleAddressCBoxChangeAction" prefHeight="21.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <GridPane.margin>
+            <Insets left="15.0" fx:id="x2" />
+          </GridPane.margin>
+        </ComboBox>
+        <ComboBox fx:id="stateCBox" prefHeight="21.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.margin="$x2" GridPane.rowIndex="1">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextField fx:id="cityField" prefHeight="21.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+          <stylesheets>
+            <URL value="@main.css" />
+          </stylesheets>
+          <GridPane.margin>
+            <Insets left="15.0" right="15.0" fx:id="x4" />
+          </GridPane.margin>
+        </TextField>
+        <TextField fx:id="streetField" prefHeight="21.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.margin="$x4" GridPane.rowIndex="3">
+          <stylesheets>
+            <URL value="@main.css" />
+          </stylesheets>
+        </TextField>
+        <TextField fx:id="zipField" prefHeight="21.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.margin="$x4" GridPane.rowIndex="4">
+          <stylesheets>
+            <URL value="@main.css" />
+          </stylesheets>
+        </TextField>
+        <Button fx:id="addButt" mnemonicParsing="false" onAction="#handleAddApplyAddressAction" prefWidth="90.0" style="-fx-background-color: #2196F3;" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
+          <GridPane.margin>
+            <Insets top="15.0" fx:id="x3" />
+          </GridPane.margin>
+        </Button>
+        <Button id="removeBut" fx:id="removeButt" disable="true" mnemonicParsing="false" onAction="#handleRemoveAddressAction" prefWidth="90.0" style="-fx-background-color: #2196F3;" text="Remove" GridPane.columnIndex="2" GridPane.margin="$x3" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" percentHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <stylesheets>
+    <URL value="@main.css" />
+  </stylesheets>
+</AnchorPane>
