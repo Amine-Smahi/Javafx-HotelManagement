@@ -23,9 +23,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
-    * Diese Klasse is für die Arbeit mit der Addresse-Tabelle verantwortlich ist.
-    */
 
 public class AddressTabController {
 
@@ -59,12 +56,7 @@ public class AddressTabController {
     private final ObservableList<String> addressData = FXCollections.observableArrayList();   
 
     
-    /**
-    * füllt das Adressenformular mit den Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion auf die Adressewahl
-    * @see    ActionEvent
-    */
+ 
     @FXML
     void handleAddressCBoxChangeAction(ActionEvent event) {
         if (!addressCBox.getItems().isEmpty()){ 
@@ -106,18 +98,11 @@ public class AddressTabController {
         }
     }
     
-    /**
-    * speichert die Daten in die Datenbank.
-    *
-    * @param  event  Reaktion auf die Buttonklick
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+
     @FXML
     void handleAddApplyAddressAction(ActionEvent event) throws IOException { 
         if (cityField.getText().isEmpty() || zipField.getText().isEmpty() || streetField.getText().isEmpty()){
-            // Die Formularsdaten sind nicht korrekt. Es wird ein Reportdialog aufgerufen.
+          
             Stage s = new Stage(StageStyle.TRANSPARENT);
             s.initModality(Modality.APPLICATION_MODAL);            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ReportDialog.fxml"));
@@ -165,14 +150,7 @@ public class AddressTabController {
         }        
     }
 
-    /**
-    * löscht einen Adresseneintrag aus der Datenbank.
-    *
-    * @param  event  Reaktion
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+  
     @FXML
     void handleRemoveAddressAction(ActionEvent event) throws IOException {
         Stage s = new Stage(StageStyle.TRANSPARENT);
@@ -196,9 +174,7 @@ public class AddressTabController {
         }  
     }
     
-    /**
-    * initialisiert und stellt die GUI-Komponenten des Adressenfromulars ein.
-    */
+ 
     @FXML
     void initialize() {
         assert addButt != null : "fx:id=\"addButt\" was not injected: check your FXML file 'AddressTab.fxml'.";
@@ -224,9 +200,7 @@ public class AddressTabController {
         }
     }
     
-    /**
-    * füllt addresseComboBox mit Daten.
-    */
+   
     private void refresh(){
         addressData.removeAll(addressData);
         addressData.add("New Address");

@@ -10,10 +10,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
-/**
- * Dialog mit Confirm-, Cancel-buttons
- * @author Nosenko
- */
+
 public class ConfirmationDialogController {
 
     @FXML

@@ -25,10 +25,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
-    * Diese Klasse is für die Arbeit mit der Guest-Tabelle verantwortlich ist.
-    */
-
 public class GuestTabController {
 
     @FXML
@@ -65,12 +61,7 @@ public class GuestTabController {
     private final ObservableList<String> corrData = FXCollections.observableArrayList();
     private final ObservableList<String> guestData = FXCollections.observableArrayList();
 
-    /**
-    * füllt das Kundenformular mit den Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion auf die Adressewahl
-    * @see    ActionEvent
-    */    
+  
     @FXML
     void handleGuestCBoxChangeAction(ActionEvent event) {
         personList.getItems().removeAll(listData);   
@@ -106,12 +97,7 @@ public class GuestTabController {
         }
     }
         
-    /**
-    * fügt eine Person in die Liste hinzu.
-    *
-    * @param  event  Reaktion auf einen Klick   
-    * @see    MouseEvent
-    */
+
     @FXML
     void addPerson(MouseEvent event) { 
         if (!listData.contains(personCBox.getValue())){
@@ -128,12 +114,7 @@ public class GuestTabController {
         }
     }
     
-     /**
-    * löscht eine Person aus der Liste.
-    *
-    * @param  event  Reaktion auf einen Klick   
-    * @see    MouseEvent
-    */
+     
     @FXML
     void removePerson(MouseEvent event) {
         try {
@@ -147,18 +128,11 @@ public class GuestTabController {
         }
     }
     
-    /**
-    * speichert die Daten in die Datenbank.
-    *
-    * @param  event  Reaktion auf die Buttonklick
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+
     @FXML
     void handleAddApplyGuestAction(ActionEvent event) throws IOException {
         if (!corrAdrCBox.getSelectionModel().isEmpty()){
-            // Die Formularsdaten sind nicht korrekt. Es wird ein Reportdialog aufgerufen.
+     
             Stage s = new Stage(StageStyle.TRANSPARENT);
             s.initModality(Modality.APPLICATION_MODAL);            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ReportDialog.fxml"));
@@ -170,7 +144,7 @@ public class GuestTabController {
             s.setScene(scene);   
             s.show();
         } else {
-            // Die Formularsdaten sind korrekt. Sie werden in die Datenbank eingetragen.
+       
              int nextId;
              if (guestCBox.getValue().equals("New Guest")){   
                   nextId = DBInterface.getNextId("guest");
@@ -215,14 +189,8 @@ public class GuestTabController {
         }
     }
 
-    /**
-    * löscht die Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+
+    
     @FXML
     void handleRemoveGuestAction(ActionEvent event) throws IOException {
         Stage s = new Stage(StageStyle.TRANSPARENT);
@@ -257,9 +225,7 @@ public class GuestTabController {
         }
     }
 
-    /**
-    * initialisiert und stellt die GUI-Komponenten ein.
-    */
+    
     @FXML
     void initialize() {
         assert addButt != null : "fx:id=\"addGuestButt\" was not injected: check your FXML file 'GuestTab.fxml'.";
@@ -297,9 +263,7 @@ public class GuestTabController {
         }
     }
     
-    /**
-    * füllt guestComboBox mit Daten.
-    */
+  
     private void refresh(){
         guestData.removeAll(guestData);
         guestData.add("New Guest");

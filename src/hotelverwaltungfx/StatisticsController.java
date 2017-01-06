@@ -29,10 +29,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 
-/**
- * dienst zur Darstellung der Statistiken und Grafiken
- * @author Nosenko
- */
+
 public class StatisticsController {
 
     
@@ -53,9 +50,7 @@ public class StatisticsController {
     
     private LineChart<String,Number> lineChart;
 
-    /**   
-    * ActionEvent on switch ComboBox
-    */
+  
     @FXML
     void handleSwitcherChangeAction(ActionEvent event){
          if (table != null) table.getColumns().removeAll(table.getColumns());
@@ -374,9 +369,7 @@ public class StatisticsController {
          }
     }
     
-    /**
-    * erzeugt eine Tabelle und setzt die in das Formular
-    */
+   
     private void createTable(){
         if (table == null){
             if (lineChart != null){
@@ -391,9 +384,7 @@ public class StatisticsController {
         }
     }
     
-    /**
-    * erzeugt eine Grafik und setzt die in das Formular
-    */
+ 
      private void createChart(){
             if (table != null){ 
                 mainGridPane.getChildren().remove(table); 
@@ -405,9 +396,7 @@ public class StatisticsController {
             GridPane.setColumnSpan(lineChart, 3);
     }
 
-     /**
-    * initialisiert und stellt die GUI-Komponenten ein.
-    */
+ 
     @FXML
     void initialize() {
         assert mainGridPane != null : "fx:id=\"mainGridPane\" was not injected: check your FXML file 'Statistics.fxml'.";
@@ -426,9 +415,7 @@ public class StatisticsController {
         switcher.getSelectionModel().selectFirst();
     }
 
-    /**
-    * Klasse für Objekte, die die Einträge in eine Tabelle darstellen.
-    */
+  
     public static class ObjectImpl extends Object {
 
         private final SimpleStringProperty param1;

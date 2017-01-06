@@ -30,9 +30,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
-    * Diese Klasse is für die Arbeit mit der Person-Tabelle verantwortlich ist.
-    */
 
 public class PersonTabController {
     
@@ -76,12 +73,7 @@ public class PersonTabController {
     
     private final ObservableList<String> personData = FXCollections.observableArrayList();  
 
-      /**
-    * füllt das Personformular mit den Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion auf die Adressewahl
-    * @see    ActionEvent
-    */
+
     
     @FXML
     void handlePersonCBoxChangeAction(ActionEvent event) {
@@ -136,14 +128,7 @@ public class PersonTabController {
         }
     }
     
-     /**
-    * speichert die Daten in die Datenbank.
-    *
-    * @param  event  Reaktion auf die Buttonklick
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+
     @FXML
     void handleAddApplyPersonAction(ActionEvent event) { 
         try {
@@ -154,7 +139,7 @@ public class PersonTabController {
             c.setTime(birthdayDatePicker.getSelectedDate());
             int nextId;
             if (personCBox.getValue().equals("New Person")){   
-                 // Die Formularsdaten sind nicht korrekt. Es wird ein Reportdialog aufgerufen.
+              
                   nextId = DBInterface.getNextId("person");
                   DBInterface.executeStatement("INSERT INTO `person`(`id`, `name`, `surname`, `birthdate`, `nationality`, `gender`, `address`) "
                   + "VALUES (" 
@@ -168,7 +153,7 @@ public class PersonTabController {
                   personCBox.getItems().add(String.valueOf(nextId));              
                  
             } else {
-                // Die Formularsdaten sind korrekt. Sie werden in die Datenbank eingetragen.
+          
                   nextId = Integer.parseInt(personCBox.getValue());
                   DBInterface.executeStatement("UPDATE `person` SET "                         
                           + "`name`='" + nameField.getText()
@@ -186,14 +171,6 @@ public class PersonTabController {
         }
     }
 
-     /**
-    * löscht die Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
     @FXML
     void handleRemovePersonAction(ActionEvent event) throws IOException {
         Stage s = new Stage(StageStyle.TRANSPARENT);
@@ -229,9 +206,7 @@ public class PersonTabController {
         }
     }
     
-     /**
-    * initialisiert und stellt die GUI-Komponenten ein.
-    */
+   
     @FXML
     void initialize() {
         assert addButt != null : "fx:id=\"addButt\" was not injected: check your FXML file 'PersonTab.fxml'.";
@@ -292,10 +267,7 @@ public class PersonTabController {
             Logger.getLogger(CustomizerController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    /**
-    * füllt personComboBox mit Daten.
-    */
+
     private void refresh(){
         personData.removeAll(personData);
         personData.add("New Person");

@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hotelverwaltungfx;
 
 import db.DBInterface;
@@ -28,10 +25,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * @author Nosenko
- */
 public class LauncherController implements Initializable {        
     
     @FXML

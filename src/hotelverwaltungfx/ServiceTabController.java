@@ -24,9 +24,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
-    * Diese Klasse is für die Arbeit mit der Service-Tabelle verantwortlich ist.
-    */
 
 public class ServiceTabController {
 
@@ -54,12 +51,7 @@ public class ServiceTabController {
     @FXML
     private ComboBox<String> serviceCBox;
 
-    /**
-    * füllt das Formular mit den Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion auf die Adressewahl
-    * @see    ActionEvent
-    */
+
     @FXML
     void handleServiceCBoxChangeAction(ActionEvent event) { 
         if (!serviceCBox.getItems().isEmpty()){  
@@ -118,18 +110,11 @@ public class ServiceTabController {
          }
     }
     
-    /**
-    * speichert die Daten in die Datenbank.
-    *
-    * @param  event  Reaktion auf die Buttonklick
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+    
     @FXML
     void handleAddApplyServiceAction(ActionEvent event) throws IOException{ 
         if (descrField.getText().isEmpty() || priceField.getText().isEmpty() || !HelpFunctions.isDouble(priceField.getText())){
-           // Die Formularsdaten sind nicht korrekt. Es wird ein Reportdialog aufgerufen.
+          
             Stage s = new Stage(StageStyle.TRANSPARENT);
             s.initModality(Modality.APPLICATION_MODAL);            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ReportDialog.fxml"));
@@ -183,14 +168,7 @@ public class ServiceTabController {
         }
     }
 
-     /**
-    * löscht die Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+
     @FXML
     void handleRemoveServiceAction(ActionEvent event) throws IOException {
         Stage s = new Stage(StageStyle.TRANSPARENT);
@@ -226,9 +204,7 @@ public class ServiceTabController {
         }
     }
 
-     /**
-    * initialisiert und stellt die GUI-Komponenten ein.
-    */
+
     @FXML
     void initialize() {
         assert addButt != null : "fx:id=\"AddButt\" was not injected: check your FXML file 'ServiceTab.fxml'.";

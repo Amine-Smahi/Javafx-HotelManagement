@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hotelverwaltungfx;
 
 import db.DBInterface;
@@ -13,10 +10,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
 
-/**
- * dient zur Darstellung von Daten in Containers, wie ComboBoxen oder Listen
- * @author Nosenko
- */
+
 public class Callback_Guest implements Callback<ListView<String>,ListCell<String>>{
 
     @Override

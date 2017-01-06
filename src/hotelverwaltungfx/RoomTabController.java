@@ -26,9 +26,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
-    * Diese Klasse is für die Arbeit mit der Room-Tabelle verantwortlich ist.
-    */
 
 public class RoomTabController {
 
@@ -55,14 +52,7 @@ public class RoomTabController {
     
     private final ObservableList<String> roomData = FXCollections.observableArrayList();
 
-     /**
-    * speichert die Daten in die Datenbank.
-    *
-    * @param  event  Reaktion auf die Buttonklick
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+ 
     @FXML
     void handleAddApplyRoomAction(ActionEvent event) throws IOException {
         if (priceField.getText().isEmpty() || descrField.getText().isEmpty() || !HelpFunctions.isDouble(priceField.getText())){
@@ -101,14 +91,7 @@ public class RoomTabController {
         }
     }
 
-     /**
-    * löscht die Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+   
     @FXML
     void handleRemoveRoomAction(ActionEvent event) throws IOException {
         Stage s = new Stage(StageStyle.TRANSPARENT);
@@ -131,9 +114,7 @@ public class RoomTabController {
         }
     }
 
-     /**
-    * initialisiert und stellt die GUI-Komponenten ein.
-    */
+   
     @FXML
     void initialize() {
         assert addButt != null : "fx:id=\"addButt\" was not injected: check your FXML file 'RoomTab.fxml'.";
@@ -178,9 +159,7 @@ public class RoomTabController {
         
     }
     
-    /**
-    * füllt roomComboBox mit Daten.
-    */
+  
     private void refresh(){
         roomData.removeAll(roomData);
         roomData.add("New Room");

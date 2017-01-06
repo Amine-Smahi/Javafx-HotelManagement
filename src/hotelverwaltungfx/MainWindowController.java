@@ -14,11 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Nosenko
- */
+
 public class MainWindowController implements Initializable {
     
     @FXML
@@ -92,9 +88,7 @@ public class MainWindowController implements Initializable {
         contextPane.getChildren().add(root);
     }
 
-    /**
-    * Wizard
-    */
+
     @FXML
     void wizardOrder(ActionEvent event){        
         contextPane.getChildren().clear();

@@ -8,10 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-/**
- * Dialog mit einer Nachricht
- * @author Nosenko
- */
+
 public class ReportDialogController {
 
     @FXML

@@ -43,9 +43,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
-/**
-    * Diese Klasse is für die Arbeit mit der Order-Tabelle verantwortlich ist.
-    */
+
 
 public class OrderTabController {
 
@@ -104,12 +102,7 @@ public class OrderTabController {
     
     private DatePicker fromDatePicker;    
 
-    /**
-    * füllt das Buchungsformular mit den Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion auf die Adressewahl
-    * @see    ActionEvent
-    */
+ 
     
     @FXML
     void handleOrderCBoxChangeAction(ActionEvent event) { 
@@ -188,30 +181,18 @@ public class OrderTabController {
         }
     }
 
-    /**
-    * löscht eine Service aus der Liste.
-    *
-    * @param  event  Reaktion auf einen Klick   
-    * @see    MouseEvent
-    */
+  
     @FXML
     void removePerson(MouseEvent event) {
         mapData.remove(serviceList.getSelectionModel().getSelectedItem());
         listData.remove(serviceList.getSelectionModel().getSelectedItem());
     }
     
-     /**
-    * speichert die Daten in die Datenbank.
-    *
-    * @param  event  Reaktion auf die Buttonklick
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
+   
     @FXML
     void handleAddApplyOrderAction(ActionEvent event) throws IOException {
         if (guestCBox.getSelectionModel().isEmpty() || roomCBox.getSelectionModel().isEmpty() || !dateError.getText().equals("")){
-           // Die Formularsdaten sind nicht korrekt. Es wird ein Reportdialog aufgerufen. 
+
             Stage s = new Stage(StageStyle.TRANSPARENT);
             s.initModality(Modality.APPLICATION_MODAL);            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ReportDialog.fxml"));
@@ -223,7 +204,7 @@ public class OrderTabController {
             s.setScene(scene);   
             s.show();
         } else {
-            // Die Formularsdaten sind korrekt. Sie werden in die Datenbank eingetragen.
+ 
             Calendar c1 = Calendar.getInstance();
             c1.setTime(fromDatePicker.getSelectedDate());
             Calendar c2 = Calendar.getInstance();
@@ -278,14 +259,6 @@ public class OrderTabController {
         }
     }
 
-     /**
-    * löscht die Daten aus der Datenbank.
-    *
-    * @param  event  Reaktion
-    * @throws IOException  when Input- oder Output- 
-    *                      ausnahme auftritt
-    * @see    ActionEvent
-    */
     @FXML
     void handleRemoveOrderAction(ActionEvent event) throws IOException {
         Stage s = new Stage(StageStyle.TRANSPARENT);
@@ -319,10 +292,7 @@ public class OrderTabController {
         }
     }
     
-    /**
-    * ActionEvent auf Auswahl eines Elementes in der Liste.
-     * @param arg0
-    */
+
     @FXML 
     public void handleMouseClickOnServiceList(MouseEvent arg0) {
         if (serviceList.getSelectionModel().getSelectedItem()!=null){
@@ -330,18 +300,13 @@ public class OrderTabController {
             countField.setText(String.valueOf(mapData.get(serviceList.getSelectionModel().getSelectedItem())));
         }
     }
-    
-    /**
-    * ActionEvent auf Selektion des Datums.
-    */
+
     @FXML
     void handleChangeRoomSelection(ActionEvent event) {
         checkDates();
     }
     
-    /**
-    * prüft die Daten auf die Richtigkeit.
-    */
+   
     public void checkDates() {
         if (roomCBox.getValue() == null){
             dateError.setText("Select the room");
@@ -385,11 +350,7 @@ public class OrderTabController {
         }        
     }
     
-    /**
-    *  legt eine Rechnung an.
-     * @param arg0
-     * @throws java.io.IOException
-    */
+
     @FXML 
     public void createBill(MouseEvent arg0) throws IOException {
        if (!orderCBox.getValue().equals("New Order")){
@@ -480,13 +441,7 @@ public class OrderTabController {
        } 
     }
     
-    
-    /**
-    * füllt die Liste mit Daten.
-    *
-    * @param  event  Reaktion auf die Adressewahl
-    * @see    ActionEvent
-    */
+
     @FXML
     void handleServiceCBoxChangeAction(ActionEvent event) { 
         if (!serviceCBox.getItems().isEmpty() && !serviceCBox.getSelectionModel().isEmpty()){ 
@@ -509,9 +464,6 @@ public class OrderTabController {
         } 
     }
 
-     /**
-    * initialisiert und stellt die GUI-Komponenten ein.
-    */
     @FXML
     void initialize() {
         assert addButt != null : "fx:id=\"addButt\" was not injected: check your FXML file 'OrderTab.fxml'.";
@@ -635,9 +587,7 @@ public class OrderTabController {
         }
     }
     
-    /**
-    * füllt orderComboBox mit Daten.
-    */
+
     private void refresh(){     
         orderData.removeAll(orderData);
         orderData.add("New Order");
