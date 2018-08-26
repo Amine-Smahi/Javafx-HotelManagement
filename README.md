@@ -5,7 +5,7 @@ A desktop application for Hotels management using javafx and mysql
 ### what the software contains
 - Database Creator ( no need for sql dump file ... )
 - Basic Operations( add a personne , rooms , services , guests , adress , reservations )
-- dta view in a table
+- déta view in a table
 - logout
 
 ### about the design 
